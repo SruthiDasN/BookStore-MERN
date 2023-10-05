@@ -5,6 +5,8 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { SnackbarProvider, useSnackbar } from 'notistack'
 
+
+
 const CreateBooks = () => {
 
   const [title, setTitle] = useState('');
@@ -22,7 +24,7 @@ const CreateBooks = () => {
     };
     setLoading(true);
     axios
-      .post('http://localhost:3000/books', data)
+      .post(`http://localhost:3000/books`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Created Successfully', { variant: 'success'});
